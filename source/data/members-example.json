@@ -2,22 +2,16 @@
   "response": {
     "players": [
       {
+        "steamid": "76561197999609890",
+        "personaname": "Shpongoloid",
+        "profileurl": "https://steamcommunity.com/id/shpongoloid/",
+        "avatarfull": "https://avatars.steamstatic.com/71968fac742313bd17e3d4892f7b98a497a70c4f_full.jpg"
+      },
+      {
         "steamid": "76561197999938131",
-        "communityvisibilitystate": 3,
-        "profilestate": 1,
         "personaname": "Thunderbuff",
         "profileurl": "https://steamcommunity.com/id/cpt-thunderbuff/",
-        "avatar": "https://avatars.steamstatic.com/597900a9f1168edb770e988ccd10e221c6e2629d.jpg",
-        "avatarmedium": "https://avatars.steamstatic.com/597900a9f1168edb770e988ccd10e221c6e2629d_medium.jpg",
-        "avatarfull": "https://avatars.steamstatic.com/597900a9f1168edb770e988ccd10e221c6e2629d_full.jpg",
-        "avatarhash": "597900a9f1168edb770e988ccd10e221c6e2629d",
-        "lastlogoff": 1764252410,
-        "personastate": 0,
-        "realname": "Jona Koudijs",
-        "primaryclanid": "103582791431374910",
-        "timecreated": 1216244690,
-        "personastateflags": 0,
-        "loccountrycode": "NL"
+        "avatarfull": "https://avatars.steamstatic.com/597900a9f1168edb770e988ccd10e221c6e2629d_full.jpg"
       }
     ]
   }
