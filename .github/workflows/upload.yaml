@@ -1,0 +1,33 @@
+name: Upload Website
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  upload-cloudflare:
+    name: Upload to Cloudflare R2
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./source
+    steps:
+      # Checkout repository
+      - uses: actions/checkout@v5
+      
+      # Generate static website
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+      - name: Build Hugo
+        run: hugo build --minify
+
+      # Deploy to Cloudflare R2
+      - uses: ryand56/r2-upload-action@latest
+        with:
+          r2-account-id: ${{ secrets.R2_ACCOUNT_ID }}
+          r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          r2-bucket: ${{ secrets.R2_BUCKET }}
+          source-dir: public
+          destination-dir: ./
+          keep-file-fresh: true

@@ -1,0 +1,58 @@
+# List of logo images
+logos:
+  - thumbnail: /img/logo/1-thumbnail.png
+    original:  /img/logo/1.png
+  - thumbnail: /img/logo/1-thumbnail.png
+    original:  /img/logo/1.png
+  - thumbnail: /img/logo/1-thumbnail.png
+    original:  /img/logo/1.png
+  - thumbnail: /img/logo/1-thumbnail.png
+    original:  /img/logo/1.png
+  - thumbnail: /img/logo/1-thumbnail.png
+    original:  /img/logo/1.png
+  - thumbnail: /img/logo/1-thumbnail.png
+    original:  /img/logo/1.png
+  - thumbnail: /img/logo/1-thumbnail.png
+    original:  /img/logo/1.png
+  - thumbnail: /img/logo/1-thumbnail.png
+    original:  /img/logo/1.png
+  - thumbnail: /img/logo/1-thumbnail.png
+    original:  /img/logo/1.png
+
+# List of wallpaper images
+wallpapers:
+  - thumbnail: /img/wallpaper/1-thumbnail.png
+    header: /img/wallpaper/1-header.png
+    images:
+      - name: "⏹️  1600 x 1600"
+        file: /img/wallpaper/1-2560-1440.png
+      - name: "📱  1170 x 2532"
+        file: /img/wallpaper/1-2560-1440.png
+      - name: "🖥️  2560 x 1440"
+        file: /img/wallpaper/1-2560-1440.png
+      - name: "🖥️  3440 x 1440"
+        file: /img/wallpaper/1-2560-1440.png
+
+  - thumbnail: /img/wallpaper/1-thumbnail.png
+    header: /img/wallpaper/1-header.png
+    images:
+      - name: "⏹️  1600 x 1600"
+        file: /img/wallpaper/1-2560-1440.png
+      - name: "📱  1170 x 2532"
+        file: /img/wallpaper/1-2560-1440.png
+      - name: "🖥️  2560 x 1440"
+        file: /img/wallpaper/1-2560-1440.png
+      - name: "🖥️  3440 x 1440"
+        file: /img/wallpaper/1-2560-1440.png
+
+  - thumbnail: /img/wallpaper/1-thumbnail.png
+    header: /img/wallpaper/1-header.png
+    images:
+      - name: "⏹️  1600 x 1600"
+        file: /img/wallpaper/1-2560-1440.png
+      - name: "📱  1170 x 2532"
+        file: /img/wallpaper/1-2560-1440.png
+      - name: "🖥️  2560 x 1440"
+        file: /img/wallpaper/1-2560-1440.png
+      - name: "🖥️  3440 x 1440"
+        file: /img/wallpaper/1-2560-1440.png

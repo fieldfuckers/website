@@ -1,0 +1,32 @@
+name: Sync Steam
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *" # every hour
+
+jobs:
+  sync-steam:
+    name: Sync Steam Members
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # Checkout repository
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          ref: ${{ github.head_ref }}
+
+      # Retrieve Steam members
+      - name: Install Python requirements
+        run: pip3 install -r scripts/requirements.txt
+      - name: Run sync script
+        run: python3 scripts/members.py > source/data/members.json
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+
+      # Commit members file
+      - name: Commit changes in members
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: Commit updated members list
