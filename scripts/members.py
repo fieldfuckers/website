@@ -94,6 +94,10 @@ def main():
     print("Fetching player summaries...", file=sys.stderr)
     player_data = get_player_summaries(steam_ids, api_key)
     
+    # Step 4: Sort players by steamid (lowest to highest)
+    if "response" in player_data and "players" in player_data["response"]:
+        player_data["response"]["players"].sort(key=lambda p: int(p.get("steamid", "0")))
+
     # Output the JSON result
     import json
     print(json.dumps(player_data, indent=2))
