@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/sugar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>FieldFuckers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <nav class="s-container">
+          <div>
+            <h1 class="primary-color">FieldFuckers</h1>
+          </div>
+          <menu>
+            <li>
+                <a href="https://www.lanlords.nl" aria-describedby="link-tooltip-lanlords">
+                    <img src="/img/logo-lanlords.png" style="height:48px;"/>
+                </a>
+                <span role="tooltip" id="link-tooltip-lanlords">Lanlords</span>
+            </li>
+            <li>
+                <a href="https://steamcommunity.com/groups/fieldfuckers" aria-describedby="link-tooltip-steam">
+                    <img src="/img/logo-steam.svg" style="height:37px;"/>
+                </a>
+                <span role="tooltip" id="link-tooltip-steam">Steam</span>
+            </li>
+            <li>
+                <a href="https://github.com/fieldfuckers" aria-describedby="link-tooltip-github">
+                    <img src="/img/logo-github.svg" style="height:40px;"/>
+                </a>
+                <span role="tooltip" id="link-tooltip-github">GitHub</span>
+            </li>
+
+            <li>
+                <a href="https://discord.lanlords.nl" aria-describedby="link-tooltip-discord">
+                    <img src="/img/logo-discord-2.svg" style="margin:0 -18px; height:81px;"/>
+                </a>
+                <span role="tooltip" id="link-tooltip-discord">Discord</span>
+            </li>
+            
+
+          </menu>
+      </nav>
+    </header>
+
+    <div class="s-container">
+
+        <div class="s-grid" style="--span:2;">
+            <div>
+                <p>
+                    Lorem ipsum is a dummy or placeholder text commonly used in graphic design,
+                    publishing, and web development. Its purpose is to permit a page layout to
+                    be designed, independently of the copy that will subsequently populate it,
+                    or to demonstrate various fonts of a typeface without meaningful text that
+                    could be distracting.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- list of team members -->
+        <div class="s-grid" style="--span:2;">
+            <div>
+                <h2>Teamleden</h2>
+            </div>
+            <div>
+
+                {{ range $count, $member := .Site.Data.members.response.players }}
+                <div>
+                    <a href="{{ $member.profileurl }}" aria-describedby="member-tooltip-{{ $count }}" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ $member.avatarfull }}" alt="{{ $member.personaname }}"/>
+                    </a>
+                    <span role="tooltip" id="member-tooltip-{{ $count }}">{{ $member.personaname }}</span>
+                </div>
+                {{ end }}
+
+            </div>
+            <div>
+                <blockquote>
+                    <i>
+                        Deze lijst wordt automatisch gegenereerd op basis van de leden in de <a href="https://steamcommunity.com/groups/fieldfuckers">FieldFuckers Steam Groep</a>.
+                        Sta je hier niet bij, maar hoor je wel in dit lijstje? Ga naar de Steam Group en klik op <b>Request To Join</b>.
+                    </i>
+                </blockquote>
+            </div>
+        </div>
+
+        <br/><br/>
+
+        <div class="s-grid" style="--span:2;">
+            <div>
+                <h2>Logo Variaties</h2>
+            </div>
+            <div>
+                <p>
+                    asdlfkjhasldkjfhkj;asdhfadsf sdfklhasdfjkbsdas
+                    ;lksdkfjsdf
+                </p>
+            </div>
+            <div>
+                {{ range .Site.Data.images.logos }}
+                <div>
+                    <a href="{{ .original }}">
+                        <img src="{{ .thumbnail }}" />
+                    </a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+
+        <br/><br/>
+
+        <!-- list of wallpapers-->
+        <div class="s-grid" style="--span:2;">
+            <div>
+                <h2>Wallpapers</h2>
+            </div>
+            <div>
+                {{ range $count, $wallpaper := .Site.Data.images.wallpapers }}
+                <a class="wallpaper" data-modal="wallpaper-modal-{{ $count }}"><img src="{{ $wallpaper.thumbnail }}" /></a>
+                {{ end }}
+            </div>
+
+        </div>
+
+    </div>
+
+    <br/><br/>
+
+    <!-- hidden wallpaper modals -->
+    {{ range $count, $wallpaper := .Site.Data.images.wallpapers }}
+    <dialog id="wallpaper-modal-{{ $count }}">
+        <article>
+            <header style="background-image: url('{{ $wallpaper.header }}')">
+                <img src="{{ $wallpaper.header }}" />
+            </header>
+            <div class="s-grid" style="--span:3;">
+                <div>
+                    {{ range $wallpaper.images }}
+                    <div><button onclick="window.open('{{ .file }}')">{{ .name }}</button></div>
+                    {{ end }}
+                </div>
+            </div>
+        </article>
+    </dialog>
+    {{ end }}
+
+    <script>
+        // Modal functionality - allows buttons to open modals with showModal()
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find all buttons with data-modal attribute
+            const modalButtons = document.querySelectorAll('[data-modal]');
+            
+            modalButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the modal ID from the data-modal attribute
+                    const modalId = this.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    
+                    if (modal && modal.tagName === 'DIALOG') {
+                        modal.showModal();
+                    } else {
+                        console.warn(`Modal with ID "${modalId}" not found or is not a dialog element`);
+                    }
+                });
+            });
+            
+            // Also support buttons that directly reference a dialog element
+            const directModalButtons = document.querySelectorAll('[data-target]');
+            
+            directModalButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('data-target');
+                    const target = document.getElementById(targetId);
+                    
+                    if (target && target.tagName === 'DIALOG') {
+                        target.showModal();
+                    }
+                });
+            });
+        });
+    </script>
+
+  </body>
+  
+</html>
