@@ -21,6 +21,10 @@ jobs:
       - name: Build Hugo
         run: hugo build --minify
 
+      # Test local path
+      - run: ls -l
+      - run: ls -l public
+
       # Deploy to Cloudflare R2
       - uses: ryand56/r2-upload-action@latest
         with:
