@@ -1,3 +1,6 @@
+# General exluded files
+.DS_Store
+
 # Hugo generated files
 public/
 .hugo_build.lock
