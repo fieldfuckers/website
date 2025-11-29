@@ -1,5 +1,5 @@
-[![Deploy Status](https://github.com/fieldfuckers/website/actions/workflows/upload.yml/badge.svg)](https://github.com/fieldfuckers/website/actions)
-[![Sync Status](https://github.com/fieldfuckers/website/actions/workflows/steam.yml/badge.svg)](https://github.com/fieldfuckers/website/actions)
+[![Deploy Status](https://github.com/fieldfuckers/website/actions/workflows/upload.yaml/badge.svg)](https://github.com/fieldfuckers/website/actions)
+[![Sync Status](https://github.com/fieldfuckers/website/actions/workflows/steam.yaml/badge.svg)](https://github.com/fieldfuckers/website/actions)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 # FieldFuckers Website
