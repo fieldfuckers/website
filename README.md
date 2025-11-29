@@ -1,18 +1,23 @@
+[![Deploy Status](https://github.com/fieldfuckers/website/actions/workflows/upload.yml/badge.svg)](https://github.com/fieldfuckers/website/actions)
+[![Sync Status](https://github.com/fieldfuckers/website/actions/workflows/steam.yml/badge.svg)](https://github.com/fieldfuckers/website/actions)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 # FieldFuckers Website
 
-The official FieldFuckers website that provides design guidelines and offers various logo designs and wallpapers for download. The site displays team members automatically synced from the Steam community group.
+The official FieldFuckers website that provides design guidelines and offers various logo designs and wallpapers for download. The site displays team members automatically synced from the Steam community group. The website is a static site build with the static site generator [Hugo](https://gohugo.io).
 
 ## Development
 
-To run the website locally for development:
+The website is statically generated with Hugo and simple HTML build with the [Sugar CSS](https://sugar-css.com) framework. To run the website locally for development use the Hugo development server:
 
 ```bash
+cd source
 hugo server -D
 ```
 
 This starts a local development server with draft content enabled. The site will be available at `http://localhost:1313` by default.
 
-### Developing the Members Script
+### Members Script
 
 To work on the `scripts/members.py` script that syncs Steam group members:
 
@@ -38,8 +43,6 @@ To work on the `scripts/members.py` script that syncs Steam group members:
    ```
 
 ## Deployment
-
-### GitHub Actions Pipeline
 
 The repository uses GitHub Actions for automated deployment and data synchronization:
 
