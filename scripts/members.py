@@ -89,18 +89,32 @@ def main():
     print("Parsing steam IDs...", file=sys.stderr)
     steam_ids = parse_steam_ids(xml_content)
     print(f"Found {len(steam_ids)} members", file=sys.stderr)
-    
+
     # Step 3: Fetch player summaries
     print("Fetching player summaries...", file=sys.stderr)
     player_data = get_player_summaries(steam_ids, api_key)
-    
-    # Step 4: Sort players by steamid (lowest to highest)
+
+    # Step 4: Sort players by steamid (lowest to highest) and filter to only required properties
+    import json
+    filtered_data = {"response": {"players": []}}
+
     if "response" in player_data and "players" in player_data["response"]:
-        player_data["response"]["players"].sort(key=lambda p: int(p.get("steamid", "0")))
+        players = player_data["response"]["players"]
+        # Sort by steamid (lowest to highest)
+        players.sort(key=lambda p: int(p.get("steamid", "0")))
+
+        # Filter to only include required properties
+        required_properties = ["steamid", "personaname", "profileurl", "avatarfull"]
+        for player in players:
+            filtered_player = {
+                key: player.get(key)
+                for key in required_properties
+                if key in player
+            }
+            filtered_data["response"]["players"].append(filtered_player)
 
     # Output the JSON result
-    import json
-    print(json.dumps(player_data, indent=2))
+    print(json.dumps(filtered_data, indent=2))
 
 
 if __name__ == "__main__":
