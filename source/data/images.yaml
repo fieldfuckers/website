@@ -2,6 +2,7 @@
 logos:
   - thumbnail: /img/logo/1-thumbnail.png
     original:  /img/logo/1.png
+    official: true
   - thumbnail: /img/logo/1-thumbnail.png
     original:  /img/logo/1.png
   - thumbnail: /img/logo/1-thumbnail.png

@@ -53,10 +53,10 @@
         <div class="s-grid" style="--span:2;">
             <div>
                 <p>
-                    Welkom bij de FieldFuckers website — de plek voor alle informatie rondom het team,
-                    onze visuals en huisstijl. Je vindt hier een overzicht van alle teamleden, ons logo
-                    in verschillende stijlen en formaten, hoogwaardige wallpapers voor eigen gebruik en
-                    de design guidelines met kleurpalet, typografie en gebruiksvoorwaarden.
+                    Welkom bij de FieldFuckers website — de plek voor informatie rondom het team, onze
+                    visuals en huisstijl. Je vindt hier een overzicht van alle teamleden, ons logo in
+                    verschillende stijlen en formaten, hoogwaardige wallpapers voor eigen gebruik en de
+                    design guidelines met kleurpalet, typografie en gebruiksvoorwaarden.
                 </p>
             </div>
         </div>
@@ -94,21 +94,43 @@
 
         <div class="s-grid" style="--span:2;">
             <div>
-                <h2>Logo Variaties</h2>
+                <h2>Logo Details</h2>
             </div>
             <div>
                 <p>
-                    asdlfkjhasldkjfhkj;asdhfadsf sdfklhasdfjkbsdas
-                    ;lksdkfjsdf
+                    Dit zijn de standaard uitvoeringen van het FieldFuckers logo. Een van de onderstaande versies
+                    moet worden gebruikt in het geval van officiele doeleinden. Bijvoorbeeld de profielfoto van de
+                    Whatsapp groep.
                 </p>
             </div>
             <div>
                 {{ range .Site.Data.images.logos }}
+                {{ if .official }}
                 <div>
                     <a href="{{ .original }}">
                         <img src="{{ .thumbnail }}" />
                     </a>
                 </div>
+                {{ end }}
+                {{ end }}
+            </div>
+
+            <div>
+                <p>
+                    Dit zijn alternatieve uitvoeringen van het FieldFuckers logo. Gebruik deze bijvoorbeeld
+                    als profielfoto op Steam.
+                </p>
+            </div>
+
+            <div>
+                {{ range .Site.Data.images.logos }}
+                {{ if not .official }}
+                <div>
+                    <a href="{{ .original }}">
+                        <img src="{{ .thumbnail }}" />
+                    </a>
+                </div>
+                {{ end }}
                 {{ end }}
             </div>
         </div>
