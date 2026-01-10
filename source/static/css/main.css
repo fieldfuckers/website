@@ -1,17 +1,22 @@
 @font-face {
-    font-family: 'Eagle Book';
-    src: url('font/eagle-book-font.woff2') format('woff2'),
-         url('font/eagle-book-font.woff') format('woff');
+    font-family: "Eagle Book";
+    src:
+        url("font/eagle-book-font.woff2") format("woff2"),
+        url("font/eagle-book-font.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-  }
+}
 
 body {
     font-family: "Inter", serif;
 }
-h1,h2,h3,h4,h5 {
-    font-family: 'Eagle Book';
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Eagle Book";
 }
 img {
     border: var(--sugar-border-width) solid var(--s-color-bg-85-fg);
@@ -22,12 +27,13 @@ img:hover {
     opacity: 0.7;
 }
 div a {
-    border:none;
+    border: none;
 }
 div a:hover {
-    border:none;
+    border: none;
 }
-div i a:hover {
+div i a:hover,
+menu li a:hover {
     border-bottom: 1px solid var(--s-color-primary);
 }
 
@@ -39,11 +45,7 @@ header img {
     background-color: var(--s-color-primary);
 }
 .primary-color {
-    color :var(--s-color-primary);
-}
-
-.wallpaper {
-    border: var(--sugar-border-width) solid var(--s-color-bg-85-fg);
+    color: var(--s-color-primary);
 }
 
 dialog article header {
@@ -51,7 +53,6 @@ dialog article header {
     background-size: 100% auto;
     padding: 0;
 }
-
 dialog article img {
     visibility: hidden;
 }

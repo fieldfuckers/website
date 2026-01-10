@@ -58,4 +58,3 @@ The repository uses GitHub Actions for automated deployment and data synchroniza
 - Deploys the generated site to **Cloudflare R2** for hosting
 
 The website is hosted on **Cloudflare R2**, and the deployment pipeline ensures that any changes pushed to the main branch are automatically built and uploaded to the hosting bucket.
-
